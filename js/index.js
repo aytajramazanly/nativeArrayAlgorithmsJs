@@ -1,4 +1,6 @@
-const arr=[5,12,4,27,16,32,15];
+// const arr=[5,7,12,4,27,16,12,32,15];
+// console.log(arrayIndexOf(arr,12));
+// console.log(arrayLastIndexOf(arr,12,1));
 // console.log(arr);
 // console.log(arrayFind(arr,item=>item>12));
 // console.log(arrayMap(arr,item=>item*2));
@@ -58,4 +60,29 @@ function arrayMap(arr,func) {
         resultArr[i]=func(arr[i])
     }
     return resultArr;
+}
+
+function arrayIndexOf(arr,searchElement,fromIndex) {
+    if (fromIndex===undefined) {
+        fromIndex=0;
+    }
+    for (let i = fromIndex; i < arr.length; i++) {
+       if (arr[i]===searchElement) {
+           return i;
+       }
+    }
+    return -1;
+}
+
+function arrayLastIndexOf(arr,searchElement,fromIndex) {
+    if (fromIndex===undefined) {
+        fromIndex=arr.length-1;
+    }
+
+    for (let i = fromIndex; i >=0; i--) {
+       if (arr[i]===searchElement) {
+           return i;
+       }
+    }
+    return -1;
 }
